@@ -1,0 +1,1099 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* FUNDO */
+
+.background{
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+    linear-gradient(
+        rgba(133, 112, 44, 0.75),
+        rgba(71, 66, 66, 0.88)
+    ),
+    url("imagens.png/img6.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    z-index: -1;
+
+    filter:
+    brightness(0.75)
+    contrast(1.1)
+    saturate(1.2);
+
+    animation: zoomBg 12s ease-in-out infinite alternate;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width: 100%;
+    position: fixed;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 70px;
+
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+
+    z-index: 1000;
+}
+
+.logo{
+    color: #d4af37;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    text-shadow:
+    0 0 15px #d4af37;
+}
+
+.menu{
+    display: flex;
+
+    gap: 35px;
+
+    list-style: none;
+}
+
+.menu a{
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.4s;
+}
+
+.menu a:hover{
+    color: #d4af37;
+}
+
+.icons{
+    display: flex;
+    gap: 20px;
+}
+
+.icons a{
+    color: #d4af37;
+
+    font-size: 22px;
+
+    transition: 0.4s;
+}
+
+.icons a:hover{
+    transform: scale(1.2);
+}
+
+/* HERO */
+
+.hero{
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 100px;
+}
+
+.hero-overlay{
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.97) 15%,
+        rgba(0,0,0,0.75) 45%,
+        rgba(0,0,0,0.35) 100%
+    );
+}
+
+.hero-text{
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    animation: aparecer 2s ease;
+}
+
+.hero-text span{
+    color: #d4af37;
+
+    letter-spacing: 5px;
+}
+
+.hero-text h1{
+    font-size: 120px;
+
+    line-height: 120px;
+
+    margin: 20px 0;
+
+    color: #d4af37;
+
+    text-shadow:
+    0 0 20px #d4af37;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero-text h1::after{
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background: rgba(212,175,55,0.18);
+
+    filter: blur(120px);
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: -1;
+}
+
+.hero-text p{
+    color: #d1d5db;
+
+    font-size: 20px;
+
+    line-height: 38px;
+
+    max-width: 600px;
+}
+
+/* BOTÃO */
+
+.btn{
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 20px 60px;
+
+    border-radius: 60px;
+
+    border: 2px solid #d4af37;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    background: rgba(212,175,55,0.08);
+
+    backdrop-filter: blur(8px);
+
+    transition: 0.4s;
+}
+
+.btn:hover{
+    background: #d4af37;
+
+    color: black;
+
+    transform: scale(1.05);
+
+    box-shadow:
+    0 0 40px #d4af37;
+}
+
+/* TITULOS */
+
+.titulo,
+.songs h1,
+.gallery h1{
+    text-align: center;
+
+    font-size: 70px;
+
+    color: #d4af37;
+
+    margin-bottom: 60px;
+
+    text-shadow:
+    0 0 15px #d4af37;
+}
+
+/* ALBUMS */
+
+.albums{
+    padding: 120px 40px;
+}
+
+.album-container{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    flex-wrap: wrap;
+}
+
+.album-card{
+    width: 350px;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(212,175,55,0.2);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.5s;
+}
+
+.album-card:hover{
+    transform:
+    translateY(-10px)
+    scale(1.02);
+
+    box-shadow:
+    0 0 35px rgba(212,175,55,0.3);
+}
+
+.album-img{
+    overflow: hidden;
+}
+
+.album-img img{
+    width: 100%;
+    height: 400px;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.album-card:hover img{
+    transform: scale(1.08);
+}
+
+.album-info{
+    padding: 30px;
+}
+
+.album-info h2{
+    font-size: 40px;
+
+    color: #d4af37;
+}
+
+.album-info span{
+    display: block;
+
+    margin: 10px 0 20px;
+
+    color: #d1d5db;
+}
+
+.album-info p{
+    line-height: 30px;
+
+    color: #d1d5db;
+}
+
+/* SONGS */
+
+.songs{
+    padding: 120px 40px;
+}
+
+.song{
+    width: 80%;
+
+    margin: 40px auto;
+}
+
+.song-info{
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.song-info span{
+    color: #d4af37;
+}
+
+.bar{
+    width: 100%;
+    height: 12px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.08);
+
+    overflow: hidden;
+}
+
+.progress{
+    width: 98%;
+    height: 100%;
+
+    background: #d4af37;
+
+    border-radius: 50px;
+
+    box-shadow:
+    0 0 20px #d4af37;
+}
+
+.progress2{
+    width: 90%;
+}
+
+.progress3{
+    width: 84%;
+}
+
+/* VIDEOS */
+
+.videos{
+    padding: 120px 40px;
+
+    position: relative;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.88),
+        rgba(0,0,0,0.92)
+    ),
+    url("imagens.png/lisa-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+.videos h1{
+    text-align: center;
+
+    font-size: 70px;
+
+    color: #d4af37;
+
+    margin-bottom: 70px;
+
+    text-shadow:
+    0 0 15px rgba(212,175,55,0.5);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.videos h1::after{
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    background: rgba(212,175,55,0.15);
+
+    filter: blur(80px);
+
+    top: -60px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: -1;
+}
+
+.video-container{
+    display: flex;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    flex-wrap: wrap;
+}
+
+.video-card{
+    width: 565px;
+
+    background: rgba(15,15,15,0.75);
+
+    border: 1px solid rgba(212,175,55,0.25);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.5s;
+
+    box-shadow:
+    0 0 20px rgba(0,0,0,0.4);
+}
+
+.video-card:hover{
+    transform:
+    translateY(-10px)
+    scale(1.02);
+
+    box-shadow:
+    0 0 30px rgba(212,175,55,0.4);
+}
+
+.video-card video{
+    width: 100%;
+
+    height: 320px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-bottom: 1px solid rgba(212,175,55,0.3);
+}
+
+.video-card h2{
+    text-align: center;
+
+    padding: 20px;
+
+    color: #d4af37;
+
+    font-size: 28px;
+
+    letter-spacing: 2px;
+}
+
+/* FOOTER */
+
+footer{
+    padding: 50px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(212,175,55,0.2);
+}
+
+.footer-icons{
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 25px;
+
+    color: #d4af37;
+
+    font-size: 28px;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes aparecer{
+
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomBg{
+
+    from{
+        transform: scale(1);
+    }
+
+    to{
+        transform: scale(1.08);
+    }
+}
+
+/* RESPONSIVO */
+
+@media(max-width: 900px){
+
+    .hero{
+        padding: 0 30px;
+    }
+
+    .hero-text h1{
+        font-size: 65px;
+        line-height: 70px;
+    }
+
+    .titulo,
+    .songs h1,
+    .gallery h1,
+    .videos h1{
+        font-size: 45px;
+    }
+
+    .navbar{
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    .menu{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .video-card{
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .video-card video{
+        height: 220px;
+    }
+}
+
+/* ========================= */
+/* EFEITO MUSICAL NA PÁGINA */
+/* ========================= */
+
+body::before{
+    content: "";
+
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background:
+    radial-gradient(circle at 20% 30%, rgba(212,175,55,0.12), transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(212,175,55,0.08), transparent 20%),
+    radial-gradient(circle at 50% 80%, rgba(212,175,55,0.1), transparent 30%);
+
+    animation: pulseBg 6s infinite alternate;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+@keyframes pulseBg{
+    0%{
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    100%{
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* ===== BARRAS DE MUSICA ===== */
+
+.music-bars{
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 6px;
+
+    z-index: 999;
+}
+
+.music-bars span{
+    width: 8px;
+
+    background: #d4af37;
+
+    border-radius: 20px;
+
+    box-shadow:
+    0 0 10px #d4af37,
+    0 0 20px #d4af37;
+
+    animation: music 1s infinite ease-in-out;
+}
+
+.music-bars span:nth-child(1){
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.music-bars span:nth-child(2){
+    height: 40px;
+    animation-delay: 0.2s;
+}
+
+.music-bars span:nth-child(3){
+    height: 60px;
+    animation-delay: 0.4s;
+}
+
+.music-bars span:nth-child(4){
+    height: 35px;
+    animation-delay: 0.6s;
+}
+
+.music-bars span:nth-child(5){
+    height: 50px;
+    animation-delay: 0.8s;
+}
+
+@keyframes music{
+    0%{
+        transform: scaleY(0.5);
+    }
+
+    50%{
+        transform: scaleY(1.4);
+    }
+
+    100%{
+        transform: scaleY(0.5);
+    }
+}
+
+/* ===== BRILHO NOS TITULOS ===== */
+
+.hero-text h1,
+.videos h1,
+.titulo{
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow{
+    0%{
+        text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px #d4af37;
+    }
+
+    100%{
+        text-shadow:
+        0 0 20px #d4af37,
+        0 0 40px #d4af37,
+        0 0 60px #d4af37;
+    }
+}
+
+/* ===== EFEITO NOS CARDS ===== */
+
+.album-card:hover,
+.video-card:hover{
+    transform:
+    translateY(-12px)
+    scale(1.03);
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,0.4),
+    0 0 40px rgba(212,175,55,0.3),
+    0 0 60px rgba(212,175,55,0.2);
+}
+
+/* ========================= */
+/* PARTÍCULAS FLUTUANDO */
+/* ========================= */
+
+body::after{
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+    radial-gradient(#d4af37 1px, transparent 1px),
+    radial-gradient(#d4af37 1px, transparent 1px),
+    radial-gradient(#ffffff 1px, transparent 1px);
+
+    background-size:
+    120px 120px,
+    180px 180px,
+    250px 250px;
+
+    opacity: 0.15;
+
+    animation: particlesMove 20s linear infinite;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+@keyframes particlesMove{
+    from{
+        transform: translateY(0);
+    }
+
+    to{
+        transform: translateY(-200px);
+    }
+}
+
+/* ========================= */
+/* EFEITO GLASS NA NAVBAR */
+/* ========================= */
+
+.navbar{
+    background: rgba(0,0,0,0.35);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,0.08);
+}
+
+/* ========================= */
+/* LINHA BRILHANDO */
+/* ========================= */
+
+.navbar::after{
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+    linear-gradient(
+        to right,
+        transparent,
+        #d4af37,
+        transparent
+    );
+
+    animation: lineGlow 3s infinite linear;
+}
+
+@keyframes lineGlow{
+    0%{
+        opacity: 0.3;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0.3;
+    }
+}
+
+/* ========================= */
+/* BOTÃO PREMIUM */
+/* ========================= */
+
+.btn{
+    position: relative;
+
+    overflow: hidden;
+}
+
+.btn::before{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.5),
+        transparent
+    );
+
+    transition: 0.8s;
+}
+
+.btn:hover::before{
+    left: 100%;
+}
+
+/* ========================= */
+/* IMAGENS RESPIRANDO */
+/* ========================= */
+
+.album-img img{
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-8px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/* ========================= */
+/* TITULOS COM NEON */
+/* ========================= */
+
+.hero-text h1{
+    animation:
+    neonGlow 2.5s infinite alternate;
+}
+
+@keyframes neonGlow{
+    from{
+        text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px #d4af37;
+    }
+
+    to{
+        text-shadow:
+        0 0 20px #d4af37,
+        0 0 40px #d4af37,
+        0 0 60px #d4af37;
+    }
+}
+
+/* ========================= */
+/* VIDEO COM BRILHO */
+/* ========================= */
+
+.video-card{
+    position: relative;
+}
+
+.video-card::before{
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 25px;
+
+    padding: 1px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(212,175,55,0.7),
+        transparent,
+        rgba(212,175,55,0.7)
+    );
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    opacity: 0;
+
+    transition: 0.5s;
+}
+
+.video-card:hover::before{
+    opacity: 1;
+}
+
+/* ========================= */
+/* ÍCONES PULSANDO */
+/* ========================= */
+
+.icons a{
+    animation: iconPulse 2s infinite;
+}
+
+@keyframes iconPulse{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.15);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* ========================= */
+/* SCROLLBAR CUSTOM */
+/* ========================= */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: black;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #d4af37;
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #ffd95e;
+}
+
+/* ========================= */
+/* WATERMARK GIGANTE */
+/* ========================= */
+
+.hero::before{
+    content: "LALISA";
+
+    position: absolute;
+
+    top: 50%;
+    right: -80px;
+
+    transform:
+    translateY(-50%)
+    rotate(-90deg);
+
+    font-size: 220px;
+
+    font-weight: 900;
+
+    color: rgba(212,175,55,0.04);
+
+    letter-spacing: 20px;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+/* ========================= */
+/* WATERMARK NOS ALBUNS */
+/* ========================= */
+
+.albums{
+    position: relative;
+
+    overflow: hidden;
+}
+
+.albums::before{
+    content: "MUSIC";
+
+    position: absolute;
+
+    top: 100px;
+    left: -50px;
+
+    font-size: 250px;
+
+    font-weight: bold;
+
+    color: rgba(255,255,255,0.03);
+
+    z-index: 0;
+
+    letter-spacing: 15px;
+
+    pointer-events: none;
+}
+
+/* ========================= */
+/* WATERMARK VIDEOS */
+/* ========================= */
+
+.videos::before{
+    content: "LISA WORLD";
+
+    position: absolute;
+
+    bottom: 20px;
+    right: 20px;
+
+    font-size: 180px;
+
+    font-weight: 900;
+
+    color: rgba(212,175,55,0.03);
+
+    z-index: 0;
+
+    letter-spacing: 10px;
+
+    pointer-events: none;
+}
+

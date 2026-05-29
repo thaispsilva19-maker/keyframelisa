@@ -1,0 +1,349 @@
+
+.entrada{
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entrada img{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    animation: zoomEntrada 8s ease forwards;
+
+    filter:
+    brightness(0.35);
+}
+
+.entrada-overlay{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,0.95),
+        rgba(0,0,0,0.35)
+    );
+
+    z-index: 1;
+}
+
+.entrada-conteudo{
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    animation: aparecer 2s ease;
+}
+
+.entrada-conteudo h1{
+    font-size: 120px;
+
+    color: #d4af37;
+
+    letter-spacing: 8px;
+
+    text-shadow:
+    0 0 20px #d4af37,
+    0 0 50px rgba(212,175,55,0.5);
+
+    animation: brilho 3s infinite alternate;
+}
+
+.entrada-conteudo p{
+    color: white;
+
+    font-size: 28px;
+
+    margin-top: 20px;
+
+    letter-spacing: 4px;
+}
+
+.entrada-conteudo a{
+    display: inline-block;
+
+    margin-top: 50px;
+
+    padding: 18px 60px;
+
+    border: 2px solid #d4af37;
+
+    border-radius: 50px;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 18px;
+
+    transition: 0.5s;
+
+    backdrop-filter: blur(10px);
+
+    background: rgba(212,175,55,0.08);
+
+    animation: pulsar 3s infinite;
+}
+
+.entrada-conteudo a:hover{
+    background: #d4af37;
+
+    color: black;
+
+    transform: scale(1.05);
+
+    box-shadow:
+    0 0 25px #d4af37;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes zoomEntrada{
+
+    from{
+        transform: scale(1);
+    }
+
+    to{
+        transform: scale(1.1);
+    }
+}
+
+@keyframes aparecer{
+
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVO */
+
+@media(max-width: 700px){
+
+    .entrada-conteudo h1{
+        font-size: 60px;
+    }
+
+    .entrada-conteudo p{
+        font-size: 18px;
+    }
+}
+
+@keyframes brilho{
+
+    from{
+        text-shadow:
+        0 0 20px #d4af37;
+    }
+
+    to{
+        text-shadow:
+        0 0 40px #d4af37,
+        0 0 80px rgba(212,175,55,0.5);
+    }
+}
+
+@keyframes pulsar{
+
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.04);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* =========================
+   ENTRADA PREMIUM (UPGRADE)
+========================= */
+
+.entrada{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* imagem com zoom mais suave */
+.entrada img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    animation: zoomEntrada 12s ease-in-out forwards;
+    filter: brightness(0.35) contrast(1.1) saturate(1.1);
+}
+
+/* overlay mais elegante */
+.entrada-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background: radial-gradient(
+        circle at center,
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.95)
+    );
+
+    z-index: 1;
+}
+
+/* conteúdo mais fluido */
+.entrada-conteudo{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    animation: aparecer 2s ease;
+}
+
+/* TÍTULO MAIS IMPACTANTE */
+.titulo{
+    font-size: 120px;
+    color: #d4af37;
+    letter-spacing: 10px;
+    font-weight: bold;
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 30px rgba(212,175,55,0.6),
+        0 0 80px rgba(212,175,55,0.3);
+
+    animation: brilho 4s infinite alternate;
+}
+
+/* subtítulo mais clean */
+.subtitulo{
+    color: rgba(255,255,255,0.85);
+    font-size: 22px;
+    letter-spacing: 5px;
+    margin-top: 15px;
+
+    opacity: 0;
+    animation: aparecerTexto 2s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* BOTÃO MAIS PREMIUM */
+.btn-enter{
+    display: inline-block;
+    margin-top: 50px;
+
+    padding: 16px 55px;
+    border-radius: 50px;
+
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+
+    border: 1px solid rgba(212,175,55,0.7);
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+
+    transition: 0.4s ease;
+
+    box-shadow: 0 0 20px rgba(212,175,55,0.15);
+
+    animation: pulsar 3s infinite;
+}
+
+.btn-enter:hover{
+    background: #d4af37;
+    color: black;
+
+    transform: translateY(-3px) scale(1.05);
+
+    box-shadow:
+        0 0 30px #d4af37,
+        0 0 60px rgba(212,175,55,0.4);
+}
+
+/* =========================
+   ANIMAÇÕES MELHORADAS
+========================= */
+
+@keyframes zoomEntrada{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.15);
+    }
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecerTexto{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes brilho{
+    from{
+        text-shadow:
+        0 0 15px #d4af37;
+    }
+    to{
+        text-shadow:
+        0 0 40px #d4af37,
+        0 0 90px rgba(212,175,55,0.6);
+    }
+}
+
+@keyframes pulsar{
+    0%{ transform: scale(1); }
+    50%{ transform: scale(1.04); }
+    100%{ transform: scale(1); }
+}
+
